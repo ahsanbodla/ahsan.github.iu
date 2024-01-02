@@ -1,0 +1,111 @@
+*
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: Verdana;
+
+}
+body {
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+overflow: hidden;
+background-image: linear-gradient(to right,#333 1px, transparent 1px)
+linear-gradient(to bottom,#333 1px, transparent 1px);
+background-image: url(/pics/newy.jpg);
+
+
+}
+.box{
+position: absolute;
+cursor: pointer;
+
+}
+.box::before{
+
+content: 'Good Bye From Ahsan!';
+position: absolute;
+width: 100%;
+color: #f3f0f0;
+font-size: 2em;
+text-align: center;
+top: -0.75em;
+transition: 1s;
+
+}
+.box:hover::before{
+transform: translateY(-100px);
+opacity: 0;
+filter: blur(30px);
+
+}
+.box::after{
+
+    content: 'Well Come From Ahsan';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    font-size: 2em;
+    text-align: center;
+    top: -0.75em;
+    transition: 1s;
+    transform: translateY(-100px);
+opacity: 0;
+filter: blur(30px);
+    }
+    .box:hover::after{
+
+        transform: translateY(0px);
+        opacity: 1;
+        filter: blur(0px);
+
+    }
+.box span{
+display: inline-block;
+color: #fff;
+font-size: 10em;
+font-weight: bold;
+transition: 2s;
+filter: blur(1px);
+
+}
+.box span:last-child{
+color: rgb(250, 11, 103);
+
+
+}
+.box:hover span:last-child{
+transform: rotate(45deg)  translateY(-200px) ;
+opacity: 0;
+filter: blur(30px);
+
+}
+.box span:nth-child(3)::after{
+content: '4';
+position: absolute;
+color: rgb(63, 245, 18);
+
+transform: rotate(-45deg)  translateY(200px) ;
+opacity: 0;
+filter: blur(30px);
+transition: 2s;
+}
+.box:hover span:nth-child(3)::after{
+
+    transform: rotate(0deg)  translateY(0px) ;
+opacity: 1;
+filter: blur(0px);
+
+}
+@media (max-width: 600px) {
+    body {
+      background-image: url(newy.jpg);
+    }
+  
+    .box span {
+      font-size: 6em; /* Adjust the font size for smaller screens */
+    }
+  }
